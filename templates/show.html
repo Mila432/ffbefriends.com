@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FFBE Friends</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/scrolling-nav.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/">Home</a>
+      </div>
+    </nav>
+	
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+             <h2>About {{ found['9qh17ZUf'] }} (lvl.{{ found['L8d0fqpT'] }}) <a href="/id/{{ found['m3Wghr1j'] }}">Link</a></h2>
+            {% autoescape false %}
+			<figure class="figure d-block">
+			<img src="/static/png/unit_ills_{{ found['3HriTp6B'] }}.png" class="figure-img img-fluid rounded mx-auto d-block">
+			<figcaption class="figure-caption text-center">The leader of {{ found['9qh17ZUf'] }} has reached {{ found['10fNKueF'] }} level and its limit burst level is {{ found['a71oxzCH'] }}. Current TMR progress {{ found['f17L8wuX']|int/10 }}%.</figcaption>
+			</figure>
+			<table class="table table-striped table-bordered">
+			  <thead>
+				<tr>
+				  <th scope="col"></th>
+				  <th scope="col">Character</th>
+				  <th scope="col">Equipment</th>
+				  <th scope="col">Total</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <th scope="row">HP</th>
+				  <td>{{ base['base']['hp'] }}</td>
+				  <td>{{ base['bonus']['hp'] }}</td>
+				  <td>{{ base['base']['hp']+base['bonus']['hp'] }}</td>
+				</tr>
+				<tr>
+				  <th scope="row">MP</th>
+				  <td>{{ base['base']['mp'] }}</td>
+				  <td>{{ base['bonus']['mp'] }}</td>
+				  <td>{{ base['base']['mp']+base['bonus']['mp'] }}</td>
+				</tr>
+				<tr>
+				  <th scope="row">ATK</th>
+				  <td>{{ base['base']['atk'] }}</td>
+				  <td>{{ base['bonus']['atk'] }}</td>
+				  <td>{{ base['base']['atk']+base['bonus']['atk'] }}</td>
+				</tr>
+				<tr>
+				  <th scope="row">DEF</th>
+				  <td>{{ base['base']['def'] }}</td>
+				  <td>{{ base['bonus']['def'] }}</td>
+				  <td>{{ base['base']['def']+base['bonus']['def'] }}</td>
+				</tr>
+				<tr>
+				  <th scope="row">MAG</th>
+				  <td>{{ base['base']['mag'] }}</td>
+				  <td>{{ base['bonus']['mag'] }}</td>
+				  <td>{{ base['base']['mag']+base['bonus']['mag'] }}</td>
+				</tr>
+				<tr>
+				  <th scope="row">SPR</th>
+				  <td>{{ base['base']['spr'] }}</td>
+				  <td>{{ base['bonus']['spr'] }}</td>
+				  <td>{{ base['base']['spr']+base['bonus']['spr'] }}</td>
+				</tr>
+			  </tbody>
+			  </table>
+			<p class="lead">{{ found['Wk1v6upb'] }}</p>
+			{% if equipment %}<p class="lead">Equipment: {{ equipment.decode('utf-8') }}</p>{% else %}{% endif %}
+			{% if mats %}<p class="lead">Materia: {{ mats.decode('utf-8') }}</p>{% else %}{% endif %}
+			{% if esper %}<figure class="figure d-block">
+			<img src="/static/png/beast{{ esper }}.png" width="256" height="256" class="figure-img img-fluid rounded mx-auto d-block">
+			</figure>{% else %}{% endif %}
+			{% endautoescape %}
+			<br>
+			<form method="get" action="/update/{{ found['m3Wghr1j'] }}">
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="{{ url_for('static', filename='js/scrolling-nav.js') }}"></script>
+
+  </body>
+
+</html>
